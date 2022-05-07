@@ -5,7 +5,7 @@
   import Profile from './components/profile/Profile.js'
   import Dialogs from './components/dialogs/Dialogs.js'
   import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import { onMessageChange } from './data/Data'
+
   
   
 
@@ -20,21 +20,24 @@ import { onMessageChange } from './data/Data'
             <Switch>
               <Route exact path='/'  render={ ()=> <Profile 
                 profilePage={props.state.profilePage} 
-                addPost={props.addPost} 
                 newPostText={props.state.profilePage.newPostText} 
-                onPostChange={props.onPostChange}
+                dispatch={props.dispatch}
+                // addPost={props.addPost} 
+                // onPostChange={props.onPostChange}
               />}/>
               <Route exact path='/profile'  render = {()=> <Profile 
                 profilePage = {props.state.profilePage} 
-                addPost={props.addPost} 
                 newPostText={props.state.profilePage.newPostText}
-                onPostChange={props.onPostChange}
+                dispatch={props.dispatch}
+                // addPost={props.addPost} 
+                // onPostChange={props.onPostChange}
               />} />
               <Route exact path='/dialogs'  render = {()=> <Dialogs 
                 dialogsPage={props.state.dialogsPage} 
                 dialogsPage={props.state.dialogsPage} 
-                sendMessage={props.sendMessage} 
-                onMessageChange={onMessageChange}
+                // sendMessage={props.sendMessage} 
+                // onMessageChange={props.onMessageChange}
+                dispatch={props.dispatch}
               />}/>
             </Switch>
           </BrowserRouter> 
